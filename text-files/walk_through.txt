@@ -1,0 +1,42 @@
+The function that generates all three fractals (with minor changes) is:
+
+		f(z) = z² + c
+
+in which "c" is a complex number, so:
+
+		f(z) = z² + c_real + c_im
+
+z is always replaced by the result of the previous run of the function, so
+we can also look at it in the following way:
+
+		f(z0) = 0 + c
+		f(z1) = (c)² + c
+		f(z1) = (c_real + c_im * i)(c_real + c_im * i) + c_real + c_im
+		f(z1) = c_real² - c_im² + 2 * c_im * c_real
+
+Is important to notice the the mandelbrot set is colorized taking in account the
+amount of iterations necessary for a complex number to diverge and escape into
+infinity. Every number outside the -2.0 and +2.0 range in both axis WILL 
+diverge, which means that for our calculation we must take that into account.
+That is why our calculation for mandelbrot range looks like this:
+
+		ptr->z_real * ptr->z_real + ptr->z_im * ptr->z_im < 4
+
+deriving from:
+
+		f(z) = (z_real + z_im)² + c_real + c_im
+		|z| > 2
+		(z_real + z_im)² < 4
+
+Julia Set: in the Julia Set, c is a constant, that's why we don't initiate it 
+at the function ft_init_julia and instead set the value for c_im and c_real 
+using ft_atof in the function ft_validating_julia_parameters.
+
+Burning Ship: the difference between this calculation and that for the 
+Mandelbrot set is that the real and imaginary components are set to their 
+respective absolute values before squaring at each iteration.
+
+		z = abs(z)² + c
+	
+That's why we use "fabs()" function at calculation, as it returns the absolute 
+value of a floating-point number.
