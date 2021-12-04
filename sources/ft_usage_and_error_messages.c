@@ -6,7 +6,7 @@
 /*   By: elraira- <elraira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 18:33:27 by elraira-          #+#    #+#             */
-/*   Updated: 2021/12/02 19:45:51 by elraira-         ###   ########.fr       */
+/*   Updated: 2021/12/04 14:24:30 by elraira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_usage_message(void)
 	printf("\n     '  `.     .o\n         -~o~'\n           '\n\n");
 	printf("Hello!\nTo generate a fractal, you must choose one of the ");
 	printf("following:\n\n1. mandelbrot\n2. julia + complex number between -2");
-	printf(".000 and 2.000 (±x.xxx ±x.xxx)\n\nWhich means ");
+	printf(".000 and 2.000 (±x.xxx ±x.xxx)\n3. burning-ship\n\nWhich means ");
 	printf("your input should look something like this:\n\n\t");
 	printf("./fractol julia −0.823 0.156\n\nBUT ATTENTION! It is case ");
 	printf("sensitive, so please all lowercase!");
