@@ -6,7 +6,7 @@
 /*   By: elraira- <elraira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 13:51:22 by elraira-          #+#    #+#             */
-/*   Updated: 2021/12/02 19:45:14 by elraira-         ###   ########.fr       */
+/*   Updated: 2021/12/03 16:28:10 by elraira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,7 @@ int	ft_key_hook(int keycode, t_fractol *ptr)
 	if (keycode == ESC)
 		ft_destroy_fractol(ptr);
 	if (keycode == KEY_C)
-	{
-		ptr->color = ptr->color + 0xf0000F;
-	}
+		ptr->color = ptr->color + 0xF0A0F0;
 	if (keycode == ARROW_UP)
 		ptr->y_min = ptr->y_min - ptr->display_shift;
 	if (keycode == ARROW_DOWN)
@@ -54,14 +52,5 @@ int	ft_key_hook(int keycode, t_fractol *ptr)
 	if (keycode == ARROW_RIGHT)
 		ptr->x_min = ptr->x_min + ptr->display_shift;
 	ft_put_image_to_window(ptr);
-	return (0);
-}
-
-int	ft_init_hooks_and_loop(t_fractol *ptr)
-{
-	ft_init_mlx(ptr);
-	mlx_hook(ptr->mlx_win, 2, 1L << 0, ft_key_hook, ptr);
-	mlx_mouse_hook(ptr->mlx_win, ft_zoom_hook, ptr);
-	mlx_loop(ptr->mlx_ptr);
 	return (0);
 }
