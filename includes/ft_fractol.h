@@ -6,7 +6,7 @@
 /*   By: elraira- <elraira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 13:18:24 by elraira-          #+#    #+#             */
-/*   Updated: 2021/12/02 19:50:22 by elraira-         ###   ########.fr       */
+/*   Updated: 2021/12/03 11:34:05 by elraira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 /*......................The math.h header defines various mathematical functions
 and one macro. All the functions available in this library take double as an 
-argument and return double as the result.....................................*/
+argument and return double as the result. Used for "fabs()" function.........*/
 # include <math.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -81,7 +81,6 @@ typedef struct s_fractol
 /**
  * @brief Displays error message when something doesn't work properly with the
  * MinilibX.
- * 
  */
 void			ft_error_message(void);
 /**
@@ -93,14 +92,25 @@ void			ft_usage_message(void);
 /**
  * @brief Displays informations about how to pass parameters to generate the 
  * julia fractal correctly.
- * 
  */
 void			ft_julia_usage_message(void);
 
 /*................Functions to receive and validate arguments.................*/
 
+/**
+ * @brief Main function check and validates arguments and allocates memory for 
+ * the structs. If allocation fails, an error message is displayed. Also, here 
+ * we define window configurations, such as height, width and display shift.
+ */
 int				ft_main(int argc, char **argv);
+
+/**
+ * @brief compares the input with the name of the available fractals and
+ * assigns them to the respective number in "fractal_name" struct variable. At
+ * the end, it calls for the settings of the fractal chosen.
+ */
 int				ft_check_fractal_name(t_fractol *ptr, char **argv, int argc);
+
 void			ft_init_each_fractal_settings(t_fractol *ptr);
 void			ft_launch_each_fractal(t_fractol *ptr);
 
