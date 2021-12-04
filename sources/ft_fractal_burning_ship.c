@@ -6,7 +6,7 @@
 /*   By: elraira- <elraira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 17:41:44 by elraira-          #+#    #+#             */
-/*   Updated: 2021/12/02 19:51:29 by elraira-         ###   ########.fr       */
+/*   Updated: 2021/12/04 14:18:06 by elraira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_burning_ship_settings(t_fractol *ptr)
 
 void	ft_init_burning_ship(t_fractol *ptr)
 {
-	ptr-> iteration = 0;
+	ptr->iteration = 0;
 	ptr->c_real = ptr->x / ptr->zoom_x + ptr->x_min;
 	ptr->c_im = ptr->y / ptr->zoom_y + ptr->y_min;
 	ptr->z_real = 0;
